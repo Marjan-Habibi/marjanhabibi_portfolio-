@@ -1,0 +1,299 @@
+
+    /* * style.css */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: white;
+      color: #FEBA17;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .font {
+      font-family: "Righteous", sans-serif;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(to right, #f7f3de, #4ED7F1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+      
+    .logo a {
+      color:  #4ED7F1;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+      
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+      
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+      
+    .nav-links li a:hover {
+      color: black;
+    }
+    .toggle-btn {
+      display: none;
+      font-size: 1.5rem;
+      color: #e7e7e7;
+      cursor: pointer;
+    }
+      
+      /* Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          background-color: #4ED7F1;
+          position: absolute;
+          top: 60px;
+          right: 20px;
+          width: 200px;
+          padding: 1rem;
+          border-radius: 10px;
+        }
+      
+        .nav-links.active {
+          display: flex;
+        }
+      
+        .toggle-btn {
+          display: block;
+        }
+      }
+      .nav-links li a {
+      color: #F5F5F5;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      padding: 0.5rem 0;
+      transition: transform 0.3s ease, color 0.3s ease;
+      }
+      
+     .nav-links li a:hover {
+      color: #f0eacf;
+      transform: translateX(5px); 
+      }
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+    
+      @keyframes slideInFromLeft {
+        from {
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fillProgress {
+        from {
+          width: 0;
+        }
+        to {
+          width: var(--progress-width);
+        }
+      }
+      .skills-section {
+        padding: 60px 20px;
+        background-color: white;
+        color: #4ED7F1;
+        font-family: 'Montserrat', sans-serif;
+        animation: slideInFromLeft 1s ease-out forwards;
+      }
+      
+      .skills-section h2 {
+        font-size: 32px;
+        text-align: center;
+        color: #4ED7F1;
+        margin-bottom: 40px;
+      }
+      
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+      }
+      .skill-box {
+        background-color: #4ED7F1;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 255, 204, 0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .skill-box:hover {
+        transform: scale(1.05);
+      }
+      
+      .skill-box img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+      }
+      
+      .skill-box h4 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: white;
+      }
+      
+      .progress-bar {
+        background-color: #444;
+        height: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      
+      .progress {
+        height: 100%;
+        background: linear-gradient(to right, #f7f3de, #f7f1cf, #1fc5e2);
+        width: 0;
+        animation: fillProgress 2s ease forwards;
+      }
+      
+      /* مقدار دقیق progress از inline style گرفته میشه و با animation اجرا میشه */
+      .progress[style] {
+        --progress-width: attr(style);
+      }
+      @media (max-width: 600px) {
+        .skills-section h2 {
+          font-size: 26px;
+        }
+      
+        .skill-box {
+          padding: 15px;
+        }
+      
+        .skill-box h4 {
+          font-size: 16px;
+        }
+      
+        .skill-box img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .extra-skills {
+        background-color: #F5F5F5;
+        color: #4ED7F1;
+        padding: 60px 20px;
+        animation: slideInFromLeft 1s ease-out forwards;
+      }
+      .extra-skills h2 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 40px;
+        color: #4ED7F1;
+      }
+      
+      .skill-category {
+        margin-bottom: 40px;
+        background: linear-gradient(to right, #f7f3de, #f0eacf, #4ED7F1);
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 255, 204, 0.05);
+        transition: transform 0.3s ease;
+      }
+      
+      .skill-category:hover {
+        transform: translateY(-5px);
+      }
+      .skill-category h3 {
+        font-size: 22px;
+        color: black;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .skill-category ul {
+        list-style-type: none;
+        padding-left: 20px;
+        margin: 0;
+      }
+      
+      .skill-category ul li {
+        padding: 5px 0;
+        font-size: 17px;
+        border-left: 3px solid black;
+        padding-left: 10px;
+        margin-bottom: 6px;
+        transition: color 0.3s;
+      }
+      
+      .skill-category ul li:hover {
+        color: #7AE2CF;
+      }
+      
+      @media (max-width: 600px) {
+        .extra-skills h2 {
+          font-size: 26px;
+        }
+      
+        .skill-category h3 {
+          font-size: 18px;
+        }
+      
+        .skill-category ul li {
+          font-size: 15px;
+        }
+      }
+      .footer-bottom{
+        background: linear-gradient(to right, #f7f3de, #4ED7F1 , #f7f3de);
+        color: black;
+        padding: 14px;
+        text-align: center;
+      }
+      
+      .background {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+      }
+      
+      .background span {
+        position: absolute;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        animation: spin 20s linear infinite, float 10s ease-in-out infinite;
+      }
+      
+      /* مکان‌های مختلف دایره‌ها */
+      .background span:nth-child(1) { top: 20%; left: 10%; }
+      .background span:nth-child(2) { top: 40%; left: 70%; }
+      .background span:nth-child(3) { top: 60%; left: 30%; }
+      .background span:nth-child(4) { top: 80%; left: 80%; }
+      .background span:nth-child(5) { top: 10%; left: 50%; }
+      
+      /* چرخش */
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      /* بالا-پایین نرم */
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+      }
+         

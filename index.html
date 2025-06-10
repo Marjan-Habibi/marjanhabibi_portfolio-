@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Marjan Habibi Portfolio</title>
+  <link rel="icon" href="images/marjan habibi.jpg" type="image/x-icon" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Text:ital@0;1&family=Lobster&family=Luckiest+Guy&family=Righteous&display=swap" rel="stylesheet"></head>
+
+  <style>
+    body {
+      margin: 0;
+      background: white;
+      font-family: sans-serif;
+    }
+
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .shape {
+      position: absolute;
+      width: 80px;  
+      height: 80px; 
+      border: 2px solid rgba(0, 153, 255, 0.5);
+      background: transparent;
+      box-sizing: border-box;
+      animation-name: growShrink;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      opacity: 0.6;
+    }
+
+    .shape:nth-child(1) { top: 20%; left: 10%; animation-duration: 4s; animation-delay: 0s; }
+    .shape:nth-child(2) { top: 40%; left: 50%; animation-duration: 5s; animation-delay: 1s; }
+    .shape:nth-child(3) { top: 60%; left: 25%; animation-duration: 4.5s; animation-delay: 0.5s; }
+    .shape:nth-child(4) { top: 80%; left: 70%; animation-duration: 6s; animation-delay: 1.5s; }
+    .shape:nth-child(5) { top: 30%; left: 80%; animation-duration: 5.5s; animation-delay: 1s; }
+
+    @keyframes growShrink {
+      0% {
+        transform: scale(0.3) rotate(0deg);
+        opacity: 0.4;
+      }
+      50% {
+        transform: scale(1.3) rotate(180deg);  
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(0.3) rotate(360deg);
+        opacity: 0.4;
+      }
+    }
+  
+    .font {
+      font-family: "Righteous", sans-serif;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: linear-gradient(to right, #f7f3de, #4ED7F1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+      
+    .logo a {
+      color:  #4ED7F1;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+      
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+      
+    .nav-links li a:hover {
+      color: black;
+    }
+    .toggle-btn {
+      display: none;
+      font-size: 1.5rem;
+      color: #e7e7e7;
+      cursor: pointer;
+    }
+   
+.toggle-btn {
+  display: none;
+  font-size: 1.5rem;
+  color:  #dddddd;
+  cursor: pointer;
+}
+
+.container {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #4ED7F1;
+}
+
+.container p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .container h2 {
+    font-size: 2rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  
+}
+
+.hero-content {
+  flex: 1 1 300px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+}
+
+.hero-content h1 span {
+  color: #4ED7F1;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+}
+.profile-ring {
+  text-align: center;
+  margin-top: 2rem;   
+}
+
+.profile-ring img {
+  width: 200px;        
+  height: 200px;      
+  border-radius: 50%;  
+  object-fit: cover;   
+  border: 2px solid #4ED7F1;
+  display: inline-block; 
+}
+
+
+.about, .projects, .contact {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.projects h2{
+    color: #1fc5e2;
+}
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-card {
+  background: #F5F5F5;; 
+  color: black;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 300px;
+
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 40px rgba(31, 197, 226, 0.3);
+}
+
+.project-card h3 {
+  color: #1fc5e2; 
+}
+
+.custom-btn{
+  background-color:  #1fc5e2;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  width: 200px;
+}
+/* footer */
+.footer {
+    background: linear-gradient(to right, #f7f3de, #4ED7F1 , #f7f3de);
+  color: black;
+  padding: 2rem 1rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.footer-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.footer-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: black;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  color: black;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: white;
+}
+
+.footer-bottom {
+  max-width: 900px;
+  margin: 1rem auto 0 auto;
+  text-align: center;
+  font-size: 0.9rem;
+  color: black;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer-content p {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .social-icons {
+    gap: 1rem;
+    font-size: 1.5rem;
+  }
+}
+ /* Responsive */
+ @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          background-color: #4ED7F1;
+          position: absolute;
+          top: 60px;
+          right: 20px;
+          width: 200px;
+          padding: 1rem;
+          border-radius: 10px;
+        }
+      
+        .nav-links.active {
+          display: flex;
+        }
+      
+        .toggle-btn {
+          display: block;
+        }
+      }
+      .nav-links li a {
+      color: #F5F5F5;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      padding: 0.5rem 0;
+      transition: transform 0.3s ease, color 0.3s ease;
+      }
+      
+     .nav-links li a:hover {
+      color: #f0eacf;
+      transform: translateX(5px); 
+      }
+      
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+    
+      @keyframes slideInFromLeft {
+        from {
+          transform: translateX(-100px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      @keyframes fillProgress {
+        from {
+          width: 0;
+        }
+        to {
+          width: var(--progress-width);
+        }
+      }
+  </style>
+</head>
+<body>
+
+  <div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+   <!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><i class="fas fa-bell"></i></a>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="my skills.html"><i class="fas fa-user"></i> Skills</a></li>
+      <li><a href="certificates.html"><i class="fas fa-certificate"></i> Certificate</a></li>
+      <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      <li><a href="project.html"><i class="fas fa-folder"></i> Project</a></li>
+    </ul>
+    <div class="toggle-btn" id="toggle-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+  
+    <section class="hero" id="home">
+      <div class="hero-content animate">
+        <h1>Hello! I'm <span class="font" id="typed-name"></span> 👋🏻</h1>
+        <p>A passionate Web Developer</p>
+        <div class="profile-ring">
+          <img src="images/marjan habibi.jpg" alt="Marjan Habibi" />
+        </div>
+        
+    </section>
+    
+    <!-- About Section -->
+  <section class="container">
+    <h2 class="font">About Me</h2>
+    <p>
+      I’m Marjan Habibi, a passionate web developer and future brain surgeon from Mazar-e-Sharif, Afghanistan.
+      With a love for clean code and creative design, I build modern, responsive websites that connect with users.
+    </p>
+    <p>
+      My journey has been shaped by resilience and self-learning, especially after the closure of girls’ schools.
+      I pursued international tech and leadership programs to grow in both skills and confidence.
+    </p>
+    <p>
+      Writing is a deep part of who I am. It helps me explore life, express emotions, and reflect on the unseen layers of the human experience.
+    </p>
+  </section>
+  <div class="profile-ring">
+    <img src="images/photo_2025-06-06_13-18-13.jpg" alt="Marjan Habibi" />
+  </div>
+    <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      
+      <div class="project-card">
+        <h3>Afghan Aria School Website</h3>
+        <p>An educational website designed for a private school, showcasing student highlights, class structures, and contact info in a clean layout. Built with HTML, CSS, and JavaScript.</p>
+        <button class="custom-btn"><a href="https://afghanaria.onrender.com" target="_blank" rel="noopener noreferrer">View Project</a></button>
+      </div>
+  
+      <div class="project-card">
+        <h3>Chanel Brand Website</h3>
+        <p>A modern and stylish brand website inspired by Chanel, designed using HTML and CSS. It features elegant layout, product sections, and a responsive design.</p>
+        <button class="custom-btn">
+        <a href="https://marjan-habibi.github.io/marjan.habibi_chanel_brand/" target="_blank" rel="noopener noreferrer">View Project</a>
+  </button> </div>
+  
+    </div>
+  </section>
+  
+    <!-- Contact Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <h2>Contact Me</h2>
+        <p>
+          I’m Marjan Habibi, a passionate web developer and future brain surgeon from Mazar-e-Sharif, Afghanistan.
+          With a love for clean code and creative design, I build modern, responsive websites that connect with users.
+        </p>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/marjan_habibi90?igsh=MWVkcnhzMnYyNWM4bQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://x.com/marjanhabibi90?s=21" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/marjan-habibi-80543a356?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/Marjan-Habibi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://t.me/marjan_habibi_web" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+          <a href="mailto:marjanhabibi875@gmail.com"><i class="fas fa-envelope"></i></a></div>
+        </div>
+      </div>
+    <!-- <footer> -->
+      <div class="footer-bottom">
+        <p>© 2025 Marjan Habibi. All rights reserved.</p>
+      </div>
+    </footer>
+    
+    <script src="script.js" defer></script>
+  
+    <script>
+        const nameText = "Marjan Habibi";
+        const nameSpan = document.getElementById("typed-name");
+      
+        let i = 0;
+      
+        function typeEffect() {
+          if (i < nameText.length) {
+            nameSpan.textContent += nameText.charAt(i);
+            i++;
+            setTimeout(typeEffect, 150); 
+          }
+        }
+      
+        window.addEventListener("load", () => {
+          setTimeout(typeEffect, 500); 
+        });
+      </script>
+      
+  
+
+</body>
+</html>

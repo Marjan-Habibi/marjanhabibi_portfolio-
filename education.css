@@ -1,0 +1,187 @@
+/* * style.css */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
+  color: #FEBA17;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.font {
+  font-family: "Righteous", sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #f7f3de, #4ED7F1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+  
+.logo a {
+  color:  #4ED7F1;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+  
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+  
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+  
+.nav-links li a:hover {
+  color: black;
+}
+.toggle-btn {
+  display: none;
+  font-size: 1.5rem;
+  color: #e7e7e7;
+  cursor: pointer;
+}
+
+  
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+.skills-section {
+  padding: 60px 20px;
+  background-color: white;
+  color: #4ED7F1;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+  
+.skills-section h2 {
+  text-align: center;
+  color: #1fc5e2;
+  font-size: 36px;
+  margin-bottom: 40px;
+  display: inline-block;
+  padding-bottom: 10px;
+  }
+  
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  
+}
+
+.timeline-item {
+  background: linear-gradient(to right, #f7f3de, #f7f1cf, #1fc5e2);
+  border-left: 4px solid #1fc5e2;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+  position: relative;
+  border-radius: 8px;
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.timeline-item h3 {
+  color: black;
+  margin-bottom: 8px;
+}
+
+.timeline-item p {
+  margin: 0;
+  line-height: 1.6;
+}
+  
+  /* CV Section */
+  
+ .cv-btn{
+  background: linear-gradient(to right, #1fc5e2, #f7f3de,#1fc5e2);
+  color: #000;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  text-decoration: none;
+  border-radius: 3px;
+ }
+
+.cv-btn:hover {
+  background-color: #e7e7e7;
+  color: #111;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+     display: none;
+     flex-direction: column;
+     background-color: #4ED7F1;
+     position: absolute;
+     top: 60px;
+     right: 20px;
+     width: 200px;
+     padding: 1rem;
+     border-radius: 10px;
+ }    
+ .nav-links.active {
+     display: flex;
+ }    
+ .toggle-btn {
+     display: block;
+   }
+  }
+  .nav-links li a {
+   color: #F5F5F5;
+   text-decoration: none;
+   font-weight: bold;
+   display: inline-block;
+   padding: 0.5rem 0;
+   transition: transform 0.3s ease, color 0.3s ease;
+   }
+   
+  .nav-links li a:hover {
+   color: #f0eacf;
+   transform: translateX(5px); 
+   }
+   @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+     
+   @keyframes slideInFromLeft {
+     from {
+       transform: translateX(-100px);
+       opacity: 0;
+     }
+     to {
+       transform: translateX(0);
+       opacity: 1;
+     }
+   }
+   @keyframes fillProgress {
+     from {
+       width: 0;
+     }
+     to {
+       width: var(--progress-width);
+     }
+   }
+   .footer-bottom{
+     background: linear-gradient(to right, #f7f3de, #4ED7F1 , #f7f3de);
+     color: black;
+     padding: 14px;
+     text-align: center;
+   }
+   
