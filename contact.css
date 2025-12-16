@@ -84,3 +84,66 @@
     display: block;
   }
 }
+/* ===== CONTACT FORM ===== */
+.form-container {
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 2.5rem;
+    background: #f5f8ff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.form-container h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: #1a1a1a;
+}
+
+.form-container p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.content-input {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 1.5rem;
+    border: 2px solid #dce4f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.content-input:focus {
+    border-color: #4ED7F1;
+    box-shadow: 0 4px 12px rgba(78,215,241,0.25);
+}
+
+textarea.content-input {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background: #4ED7F1;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #1fc5e2;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(78,215,241,0.3);
+}
+
