@@ -72,3 +72,25 @@
     color: #fff;
   }
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: linear-gradient(to right, #f7f3de, #4ED7F1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(78, 215, 241, 0.5);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.nav-links a {
+  font-size: 1.05rem;
+  padding: 0.6rem 0.8rem;
+}
+.toggle-btn {
+  font-size: 1.8rem;
+}
+
+
