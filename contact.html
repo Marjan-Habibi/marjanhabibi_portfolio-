@@ -1,93 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marjan Habibi Portfolio</title>
-    <link rel="icon" href="images/marjan habibi.jpg" type="image/x-icon" />
-    <link rel="stylesheet" href="contact.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <script src="script.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Text:ital@0;1&family=Lobster&family=Luckiest+Guy&family=Righteous&display=swap" rel="stylesheet"></head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Marjan Habibi</title>
+
+<link rel="icon" href="images/marjan habibi.jpg">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ===== GLOBAL ===== */
+body{
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  color:#1a1a1a;
+  line-height:1.7;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:3rem 1.5rem;
+}
+
+/* ===== CONTACT CARD ===== */
+.contact-card{
+  width:100%;
+  max-width:520px;
+  background:linear-gradient(145deg,#ffffff,#f0f8ff);
+  border-radius:22px;
+  padding:3rem 2.5rem;
+  text-align:center;
+  box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
+.contact-card h2{
+  font-size:2.3rem;
+  font-weight:700;
+  color:#4ED7F1;
+  margin-bottom:0.8rem;
+}
+
+.contact-card p{
+  font-size:1.05rem;
+  color:#555;
+  margin-bottom:2rem;
+}
+
+/* ===== FORM ===== */
+.contact-card form{
+  display:flex;
+  flex-direction:column;
+  gap:1.4rem;
+}
+
+.contact-card input,
+.contact-card textarea{
+  width:100%;
+  padding:14px 18px;
+  font-size:1rem;
+  border-radius:12px;
+  border:2px solid #dce4f0;
+  outline:none;
+  transition:0.3s ease;
+}
+
+.contact-card textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus{
+  border-color:#4ED7F1;
+  box-shadow:0 6px 18px rgba(78,215,241,0.25);
+}
+
+/* ===== BUTTON ===== */
+.contact-card button{
+  margin-top:0.5rem;
+  padding:14px;
+  border-radius:40px;
+  border:none;
+  background:#4ED7F1;
+  color:#fff;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.contact-card button:hover{
+  background:#1fc5e2;
+  transform:translateY(-3px);
+  box-shadow:0 8px 22px rgba(78,215,241,0.3);
+}
+
+/* ===== SOCIAL ICONS ===== */
+.contact-social{
+  margin-top:2.2rem;
+  display:flex;
+  justify-content:center;
+  gap:1.5rem;
+}
+
+.contact-social a{
+  font-size:1.6rem;
+  color:#4ED7F1;
+  transition:0.3s ease;
+}
+
+.contact-social a:hover{
+  color:#1fc5e2;
+  transform:translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer-bottom{
+  text-align:center;
+  padding:1.5rem;
+  font-size:0.9rem;
+  color:#666;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+  .contact-card{
+    padding:2.2rem 1.8rem;
+  }
+  .contact-card h2{
+    font-size:2rem;
+  }
+}
+/* ================= FOOTER ================= */
+.footer{
+  background:linear-gradient(to right,#f7f3de,#4ED7F1);
+  text-align:center;
+  padding:2.5rem 1rem;
+}
+/* ================= FOOTER ================= */
+.footer{
+  width:100%;
+  background:linear-gradient(to right, #f7f3de, #4ED7F1);
+  padding:2.5rem 1rem;
+  text-align:center;
+  margin-top:3rem;
+}
+
+.footer p{
+  font-size:0.95rem;
+  font-weight:500;
+  color:#1a1a1a;
+  letter-spacing:0.4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:600px){
+  .footer{
+    padding:2rem 1rem;
+  }
+
+  .footer p{
+    font-size:0.9rem;
+  }
+}
+
+</style>
 </head>
+
 <body>
-  <div class="background">
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-  </div>
 
+<!-- ===== CONTACT ===== -->
+<section class="contact-section">
+  <div class="contact-card">
 
-     <!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="logo">
-      <a href="index.html"><i class="fas fa-bell"></i></a>
-    </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="my skills.html"><i class="fas fa-user"></i> Skills</a></li>
-      <li><a href="certificates.html"><i class="fas fa-certificate"></i> Certificate</a></li>
-      <li><a href="#projects"><i class="fas fa-graduation-cap"></i> Education</a></li>
-      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-      <li><a href="project.html"><i class="fas fa-folder"></i> Project</a></li>
-    </ul>
-    <div class="toggle-btn" id="toggle-btn">
-      <i class="fas fa-bars"></i>
-    </div>
-  </nav>
-    <div class="form-container">
-        <h2>Let's Get in Touch</h2>
-        <p>If you’re ready to build something creative and meaningful together, don’t hesitate to reach out. I’m just a message away!</p>
-        <div class="social-icons">
-          <a href="https://x.com/marjanhabibi90?s=21" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/marjan-habibi-80543a356?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/Marjan-Habibi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="mailto:marjanhabibi875@gmail.com"><i class="fas fa-envelope"></i></a></div>
-      </div>
+    <h2>Let’s Get in Touch</h2>
+    <p>
+      If you’re ready to build something creative and meaningful together,
+      don’t hesitate to reach out. I’m just a message away!
+    </p>
 
-      <section class="content">
-    <!-- Form connected to send_email.php -->
-     <form action="mailto:marjanhabibi875@gmail.com" method="POST" enctype="text/plain" style="max-width:400px;">
-    <!-- Full Name -->
-    <div class="form-group">
-      <input class="content-input" type="text" id="name" name="name" placeholder="(Your name)" required><br>
-      <input class="content-input" type="text" id="email" name="proverb" placeholder="(Your Email)" required><br>
-      <textarea class="content-input" id="message" name="message" rows="5" placeholder="(Your Message)" required>
-      </textarea><br>
-      <input class="submit-btn" type="submit" value="Send">
-    </div>
+    <form action="mailto:marjanhabibi875@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
-  </section>
-  <!-- <footer> -->
-    <div class="footer-bottom">
-      <p>© 2025 Marjan Habibi. All rights reserved.</p>
+
+    <div class="contact-social">
+      <a href="https://x.com/marjanhabibi90" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/marjan-habibi-b84b94395?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/Marjan-Habibi" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="mailto:marjanhabibi875@gmail.com"><i class="fas fa-envelope"></i></a>
     </div>
-  </footer>
-  <script src="script.js" defer></script>
-  
-  <script>
-      const nameText = "Marjan Habibi";
-      const nameSpan = document.getElementById("typed-name");
-    
-      let i = 0;
-    
-      function typeEffect() {
-        if (i < nameText.length) {
-          nameSpan.textContent += nameText.charAt(i);
-          i++;
-          setTimeout(typeEffect, 150); 
-        }
-      }
-    
-      window.addEventListener("load", () => {
-        setTimeout(typeEffect, 500); 
-      });
-    </script>
-    
+
+  </div>
+</section>
+
+<footer class="footer-bottom">
+  <p>© 2025 Marjan Habibi. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
