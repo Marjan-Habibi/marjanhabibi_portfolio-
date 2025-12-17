@@ -1,480 +1,1263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Marjan Habibi Portfolio</title>
-  <link rel="icon" href="images/marjan habibi.jpg" type="image/x-icon" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <script src="script.js" defer></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Serif+Text:ital@0;1&family=Lobster&family=Luckiest+Guy&family=Righteous&display=swap" rel="stylesheet"></head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marjan Habibi | Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      background: white;
-      font-family: sans-serif;
-    }
+<link rel="icon" href="images/marjan habibi.jpg">
 
-    .background {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      pointer-events: none;
-    }
+<!-- Modern Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    .shape {
-      position: absolute;
-      width: 80px;  
-      height: 80px; 
-      border: 2px solid rgba(0, 153, 255, 0.5);
-      background: transparent;
-      box-sizing: border-box;
-      animation-name: growShrink;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-      animation-direction: alternate;
-      opacity: 0.6;
-    }
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-    .shape:nth-child(1) { top: 20%; left: 10%; animation-duration: 4s; animation-delay: 0s; }
-    .shape:nth-child(2) { top: 40%; left: 50%; animation-duration: 5s; animation-delay: 1s; }
-    .shape:nth-child(3) { top: 60%; left: 25%; animation-duration: 4.5s; animation-delay: 0.5s; }
-    .shape:nth-child(4) { top: 80%; left: 70%; animation-duration: 6s; animation-delay: 1.5s; }
-    .shape:nth-child(5) { top: 30%; left: 80%; animation-duration: 5.5s; animation-delay: 1s; }
-
-    @keyframes growShrink {
-      0% {
-        transform: scale(0.3) rotate(0deg);
-        opacity: 0.4;
-      }
-      50% {
-        transform: scale(1.3) rotate(180deg);  
-        opacity: 0.8;
-      }
-      100% {
-        transform: scale(0.3) rotate(360deg);
-        opacity: 0.4;
-      }
-    }
-  
-    .font {
-      font-family: "Righteous", sans-serif;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: linear-gradient(to right, #f7f3de, #4ED7F1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-      
-    .logo a {
-      color:  #4ED7F1;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-      
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-    .nav-links li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-      
-    .nav-links li a:hover {
-      color: black;
-    }
-    .toggle-btn {
-      display: none;
-      font-size: 1.5rem;
-      color: #e7e7e7;
-      cursor: pointer;
-    }
-   
-.toggle-btn {
-  display: none;
-  font-size: 1.5rem;
-  color:  #dddddd;
-  cursor: pointer;
+<style>
+/* ================= RESET & GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  color:#1a1a1a;
+  line-height:1.7;
 }
 
-.container {
-  padding: 4rem 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2.5rem;
+  background:linear-gradient(to right,#f7f3de,#4ED7F1);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.logo a{
+  font-size:1.4rem;
+  color:#ffffff;
+}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:2rem;
+}
+.nav-links a{
+  text-decoration:none;
+  color:#ffffff;
+  font-weight:600;
+}
+.toggle-btn{
+  display:none;
+  font-size:1.5rem;
+  color:#fff;
+  cursor:pointer;
 }
 
-.container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #4ED7F1;
+/* ================= HERO ================= */
+.hero{
+  min-height:90vh;
+  max-width:1200px;
+  margin:auto;
+  padding:4rem 2rem;
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:3rem;
+  align-items:center;
+}
+.hero h1{
+  font-size:3.2rem;
+  font-weight:700;
+}
+.hero span{
+  color:#4ED7F1;
+}
+.hero p{
+  margin-top:1.2rem;
+  font-size:1.15rem;
+  color:#444;
+}
+.hero-buttons{
+  margin-top:2rem;
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:14px 28px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s ease;
+}
+.primary{
+  background:#4ED7F1;
+  color:#fff;
+}
+.primary:hover{
+  background:#1fc5e2;
+  transform:translateY(-3px);
+}
+.secondary{
+  border:2px solid #4ED7F1;
+  color:#4ED7F1;
+}
+.secondary:hover{
+  background:#4ED7F1;
+  color:#fff;
 }
 
-.container p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-  color: black;
+/* ================= IMAGE ================= */
+.profile-ring img{
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #eaf8fb;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .container {
-    padding: 2rem 1rem;
+/* ================= SECTIONS ================= */
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:5rem 2rem;
+}
+.section h2{
+  font-size:2.4rem;
+  margin-bottom:2rem;
+  font-weight:700;
+  text-align:center;
+  color:#4ED7F1;
+}
+
+/* ================= ABOUT ================= */
+.about p{
+  margin-bottom:1.5rem;
+  font-size:1.05rem;
+  color:#333;
+}
+
+/* ================= MODERN SKILLS WITH ICONS ================= */
+.skills-modern{
+  margin-top:5rem;
+}
+.skills-list{
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+}
+.skill-row{
+  display:flex;
+  align-items:flex-start;
+  gap:1.5rem;
+  padding:2.2rem 2rem;
+  border-radius:20px;
+  background:linear-gradient(145deg,#ffffff,#f0f8ff);
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  transition:all 0.4s ease;
+}
+.skill-row:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 60px rgba(78,215,241,0.25);
+}
+.skill-icon{
+  font-size:2.5rem;
+  color:#4ED7F1;
+  flex-shrink:0;
+  width:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.skill-content h3{
+  font-size:1.5rem;
+  margin-bottom:0.6rem;
+  color:#1a1a1a;
+}
+.skill-content p{
+  color:#444;
+  line-height:1.7;
+}
+
+/* ================= GOFUNDME ================= */
+.gofundme{
+  text-align:center;
+  background:#f5fbfd;
+  border-radius:20px;
+  padding:3rem 2rem;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  background:linear-gradient(to right,#f7f3de,#4ED7F1);
+  text-align:center;
+  padding:2.5rem 1rem;
+}
+.social-icons a{
+  margin:0 12px;
+  font-size:1.6rem;
+  color:#000;
+}
+
+/* ================= ANIMATION ================= */
+.fade{
+  animation:fadeUp 1.1s ease both;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
   }
-
-  .container h2 {
-    font-size: 2rem;
-  }
-
-  .container p {
-    font-size: 1rem;
-    text-align: justify;
+  .profile-ring{
+    margin-top:2rem;
   }
 }
-
-.hero {
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#4ED7F1;
+    position:absolute;
+    top:65px;
+    right:20px;
+    padding:1rem;
+    border-radius:12px;
+  }
+  .nav-links.active{
+    display:flex;
+  }
+  .toggle-btn{
+    display:block;
+  }
+  .skill-row{
+    flex-direction:row;
+    gap:1rem;
+    padding:1.8rem;
+  }
+  .skill-icon{
+    font-size:2rem;
+  }
+  .skill-content h3{
+    font-size:1.3rem;
+  }
+}
+.navbar {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 4rem 2rem;
-  
+  padding: 1.5rem 3rem; /* افزایش ارتفاع از 1rem 2.5rem به 1.5rem 3rem */
+  background: linear-gradient(to right, #f7f3de, #4ED7F1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(78, 215, 241, 0.5); /* یک خط پایین اضافه برای جداسازی */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* سایه ملایم برای عمق */
+}
+.nav-links a {
+  font-size: 1.05rem; /* کمی بزرگتر */
+  padding: 0.6rem 0.8rem; /* فاصله داخلی بیشتر برای کلیک راحت */
+}
+.toggle-btn {
+  font-size: 1.8rem; /* کمی بزرگتر برای موبایل */
 }
 
-.hero-content {
-  flex: 1 1 300px;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-}
-
-.hero-content h1 span {
-  color: #4ED7F1;
-}
-
-.hero-content p {
-  font-size: 1.25rem;
-}
-.profile-ring {
-  text-align: center;
-  margin-top: 2rem;   
-}
-
-.profile-ring img {
-  width: 200px;        
-  height: 200px;      
-  border-radius: 50%;  
-  object-fit: cover;   
-  border: 2px solid #4ED7F1;
-  display: inline-block; 
-}
-
-
-.about, .projects, .contact {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-.projects h2{
-    color: #1fc5e2;
-}
-.project-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.project-card {
-  background: #F5F5F5;; 
-  color: black;
-  padding: 2rem;
-  border-radius: 15px;
-  width: 300px;
-
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 40px rgba(31, 197, 226, 0.3);
-}
-
-.project-card h3 {
-  color: #1fc5e2; 
-}
-
-.custom-btn{
-  background-color:  #1fc5e2;
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  width: 200px;
-}
-/* footer */
-.footer {
-    background: linear-gradient(to right, #f7f3de, #4ED7F1 , #f7f3de);
-  color: black;
-  padding: 2rem 1rem 1rem;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.footer-content {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #333;
-}
-
-.footer-content h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: black;
-}
-
-.footer-content p {
-  font-size: 1rem;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-  color: black;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.social-icons a {
-  color: black;
-  font-size: 1.8rem;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: white;
-}
-
-.footer-bottom {
-  max-width: 900px;
-  margin: 1rem auto 0 auto;
-  text-align: center;
-  font-size: 0.9rem;
-  color: black;
-}
-
-
-/* Responsive */
-@media (max-width: 600px) {
-  .footer-content p {
-    max-width: 100%;
-    padding: 0 1rem;
-  }
-
-  .social-icons {
-    gap: 1rem;
-    font-size: 1.5rem;
-  }
-}
- /* Responsive */
- @media (max-width: 768px) {
-        .nav-links {
-          display: none;
-          flex-direction: column;
-          background-color: #4ED7F1;
-          position: absolute;
-          top: 60px;
-          right: 20px;
-          width: 200px;
-          padding: 1rem;
-          border-radius: 10px;
-        }
-      
-        .nav-links.active {
-          display: flex;
-        }
-      
-        .toggle-btn {
-          display: block;
-        }
-      }
-      .nav-links li a {
-      color: #F5F5F5;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-block;
-      padding: 0.5rem 0;
-      transition: transform 0.3s ease, color 0.3s ease;
-      }
-      
-     .nav-links li a:hover {
-      color: #f0eacf;
-      transform: translateX(5px); 
-      }
-      
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
-    
-      @keyframes slideInFromLeft {
-        from {
-          transform: translateX(-100px);
-          opacity: 0;
-        }
-        to {
-          transform: translateX(0);
-          opacity: 1;
-        }
-      }
-      
-      @keyframes fillProgress {
-        from {
-          width: 0;
-        }
-        to {
-          width: var(--progress-width);
-        }
-      }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <div class="background">
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-  </div>
-   <!-- Navigation Bar -->
+<!-- NAVBAR -->
 <nav class="navbar">
-    <div class="logo">
-      <a href="index.html"><i class="fas fa-bell"></i></a>
+  <div class="logo"><a href="#"><i class="fas fa-bell"></i></a></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="my skills.html"><i class="fas fa-user"></i> Skills</a></li>
+    <li><a href="certificates.html"><i class="fas fa-certificate"></i> Certificates</a></li>
+    <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+    <li><a href="project.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>  
+  <div class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade">
+  <div>
+    <h1>Hello, I’m <span id="typed-name"></span></h1>
+    <p>
+      Web Developer • Founder of Women Family Empower • Future Neurosurgeon
+    </p>
+    <div class="hero-buttons">
+      <a href="#about" class="btn primary">My Story</a>
+      <a href="#gofundme" class="btn secondary">Support My Education</a>
     </div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="my skills.html"><i class="fas fa-user"></i> Skills</a></li>
-      <li><a href="certificates.html"><i class="fas fa-certificate"></i> Certificate</a></li>
-      <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
-      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-      <li><a href="project.html"><i class="fas fa-folder"></i> Project</a></li>
-    </ul>
-    <div class="toggle-btn" id="toggle-btn">
-      <i class="fas fa-bars"></i>
-    </div>
-  </nav>
-  
-    <section class="hero" id="home">
-      <div class="hero-content animate">
-        <h1>Hello! I'm <span class="font" id="typed-name"></span> 👋🏻</h1>
-        <p>A passionate Web Developer</p>
-        <div class="profile-ring">
-          <img src="images/marjan habibi.jpg" alt="Marjan Habibi" />
-        </div>
-        
-    </section>
-    
-    <!-- About Section -->
-  <section class="container">
-    <h2 class="font">About Me</h2>
-    <p>
-      I’m Marjan Habibi, a passionate web developer and future brain surgeon from Mazar-e-Sharif, Afghanistan.
-      With a love for clean code and creative design, I build modern, responsive websites that connect with users.
-    </p>
-    <p>
-      My journey has been shaped by resilience and self-learning, especially after the closure of girls’ schools.
-      I pursued international tech and leadership programs to grow in both skills and confidence.
-    </p>
-    <p>
-      Writing is a deep part of who I am. It helps me explore life, express emotions, and reflect on the unseen layers of the human experience.
-    </p>
-  </section>
-  <div class="profile-ring">
-    <img src="images/photo_2025-06-06_13-18-13.jpg" alt="Marjan Habibi" />
   </div>
-    <!-- Projects Section -->
-  <section class="projects" id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      
-      <div class="project-card">
-        <h3>Afghan Aria School Website</h3>
-        <p>An educational website designed for a private school, showcasing student highlights, class structures, and contact info in a clean layout. Built with HTML, CSS, and JavaScript.</p>
-        <button class="custom-btn"><a href="https://afghanaria.onrender.com" target="_blank" rel="noopener noreferrer">View Project</a></button>
-      </div>
-  
-      <div class="project-card">
-        <h3>Chanel Brand Website</h3>
-        <p>A modern and stylish brand website inspired by Chanel, designed using HTML and CSS. It features elegant layout, product sections, and a responsive design.</p>
-        <button class="custom-btn">
-        <a href="https://marjan-habibi.github.io/marjan.habibi_chanel_brand/" target="_blank" rel="noopener noreferrer">View Project</a>
-  </button> </div>
-  
-    </div>
-  </section>
-  
-    <!-- Contact Section -->
-    <footer class="footer">
-      <div class="footer-content">
-        <h2>Contact Me</h2>
+  <div class="profile-ring">
+    <img src="pic/marjan.jpg" alt="Marjan Habibi">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about fade" id="about">
+  <h2>My Story</h2>
+  <p>
+    I am Marjan Habibi, a self-taught web developer and the founder of <strong>Women Family Empower</strong>,
+    an initiative focused on supporting women and families through education, awareness, and empowerment.
+    When girls’ schools were closed in Afghanistan, I refused to let silence shape my future.
+  </p>
+  <p>
+    Through online learning, discipline, and resilience, I developed technical skills in web development
+    and discovered the power of technology as a voice for change and self-expression.
+  </p>
+  <p>
+    My long-term goal is to become a neurosurgeon and a writer who tells the stories of Afghan women —
+    stories of pain, resistance, and hope — and proves that even under restriction,
+    dreams can grow and create real impact.
+  </p>
+</section>
+
+<!-- SKILLS / WHAT I DO -->
+<section class="section skills-modern fade" id="skills">
+  <h2>Skills & Impact</h2>
+  <div class="skills-list">
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-code"></i></div>
+      <div class="skill-content">
+        <h3>Frontend Development</h3>
         <p>
-          I’m Marjan Habibi, a passionate web developer and future brain surgeon from Mazar-e-Sharif, Afghanistan.
-          With a love for clean code and creative design, I build modern, responsive websites that connect with users.
+          Building clean, responsive, and accessible websites using HTML, CSS, and JavaScript with a focus on user experience.
         </p>
-        <div class="social-icons">
-          <a href="https://www.instagram.com/marjan_habibi90?igsh=MWVkcnhzMnYyNWM4bQ%3D%3D&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://x.com/marjanhabibi90?s=21" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.linkedin.com/in/marjan-habibi-80543a356?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/Marjan-Habibi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="https://t.me/marjan_habibi_web" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-          <a href="mailto:marjanhabibi875@gmail.com"><i class="fas fa-envelope"></i></a></div>
-        </div>
       </div>
-    <!-- <footer> -->
-      <div class="footer-bottom">
-        <p>© 2025 Marjan Habibi. All rights reserved.</p>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-users"></i></div>
+      <div class="skill-content">
+        <h3>Social Impact & Leadership</h3>
+        <p>
+          Founder of <strong>Women Family Empower</strong>, supporting women and families through education, awareness, and community initiatives.
+        </p>
       </div>
-    </footer>
-    
-    <script src="script.js" defer></script>
-  
-    <script>
-        const nameText = "Marjan Habibi";
-        const nameSpan = document.getElementById("typed-name");
-      
-        let i = 0;
-      
-        function typeEffect() {
-          if (i < nameText.length) {
-            nameSpan.textContent += nameText.charAt(i);
-            i++;
-            setTimeout(typeEffect, 150); 
-          }
-        }
-      
-        window.addEventListener("load", () => {
-          setTimeout(typeEffect, 500); 
-        });
-      </script>
-      
-  
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-pen-nib"></i></div>
+      <div class="skill-content">
+        <h3>Creative & Analytical Writing</h3>
+        <p>
+          Writing essays and articles reflecting identity, struggle, resilience, and the lived experiences of Afghan women.
+        </p>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-brain"></i></div>
+      <div class="skill-content">
+        <h3>Self-Learning & Growth</h3>
+        <p>
+          Continuous learner through online programs, self-study, and personal discipline despite educational barriers.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GOFUNDME -->
+<section class="section gofundme fade" id="gofundme">
+  <h2>Support My Education</h2>
+  <p style="margin:1.5rem auto;max-width:700px;">
+    Due to educational restrictions, continuing my studies is extremely challenging.
+    Your support helps me stay on my path toward education, medicine, and long-term impact.
+  </p>
+  <a href="PUT_YOUR_GOFUNDME_LINK_HERE" class="btn primary" target="_blank">
+    Support Me on GoFundMe
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="social-icons">
+    <a href="https://github.com/Marjan-Habibi" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:marjanhabibi875@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+  <p style="margin-top:1rem;">© 2025 Marjan Habibi</p>
+</footer>
+
+<script>
+/* NAVBAR TOGGLE */
+document.getElementById("toggle-btn").onclick=()=>{
+  document.getElementById("nav-links").classList.toggle("active");
+}
+
+/* TYPE EFFECT */
+const text="Marjan Habibi";
+let i=0;
+const target=document.getElementById("typed-name");
+function typeEffect(){
+  if(i<text.length){
+    target.innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeEffect,120);
+  }
+}
+window.onload=typeEffect;
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marjan Habibi | Portfolio</title>
+
+<link rel="icon" href="images/marjan habibi.jpg">
+
+<!-- Modern Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+/* ================= RESET & GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  color:#1a1a1a;
+  line-height:1.7;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2.5rem;
+  background:linear-gradient(to right,#f7f3de,#4ED7F1);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.logo a{
+  font-size:1.4rem;
+  color:#ffffff;
+}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:2rem;
+}
+.nav-links a{
+  text-decoration:none;
+  color:#ffffff;
+  font-weight:600;
+}
+.toggle-btn{
+  display:none;
+  font-size:1.5rem;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:90vh;
+  max-width:1200px;
+  margin:auto;
+  padding:4rem 2rem;
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:3rem;
+  align-items:center;
+}
+.hero h1{
+  font-size:3.2rem;
+  font-weight:700;
+}
+.hero span{
+  color:#4ED7F1;
+}
+.hero p{
+  margin-top:1.2rem;
+  font-size:1.15rem;
+  color:#444;
+}
+.hero-buttons{
+  margin-top:2rem;
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:14px 28px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s ease;
+}
+.primary{
+  background:#4ED7F1;
+  color:#fff;
+}
+.primary:hover{
+  background:#1fc5e2;
+  transform:translateY(-3px);
+}
+.secondary{
+  border:2px solid #4ED7F1;
+  color:#4ED7F1;
+}
+.secondary:hover{
+  background:#4ED7F1;
+  color:#fff;
+}
+
+/* ================= IMAGE ================= */
+.profile-ring img{
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #eaf8fb;
+}
+
+/* ================= SECTIONS ================= */
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:5rem 2rem;
+}
+.section h2{
+  font-size:2.4rem;
+  margin-bottom:2rem;
+  font-weight:700;
+  text-align:center;
+  color:#4ED7F1;
+}
+
+/* ================= ABOUT ================= */
+.about p{
+  margin-bottom:1.5rem;
+  font-size:1.05rem;
+  color:#333;
+}
+
+/* ================= MODERN SKILLS WITH ICONS ================= */
+.skills-modern{
+  margin-top:5rem;
+}
+.skills-list{
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+}
+.skill-row{
+  display:flex;
+  align-items:flex-start;
+  gap:1.5rem;
+  padding:2.2rem 2rem;
+  border-radius:20px;
+  background:linear-gradient(145deg,#ffffff,#f0f8ff);
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  transition:all 0.4s ease;
+}
+.skill-row:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 60px rgba(78,215,241,0.25);
+}
+.skill-icon{
+  font-size:2.5rem;
+  color:#4ED7F1;
+  flex-shrink:0;
+  width:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.skill-content h3{
+  font-size:1.5rem;
+  margin-bottom:0.6rem;
+  color:#1a1a1a;
+}
+.skill-content p{
+  color:#444;
+  line-height:1.7;
+}
+
+/* ================= GOFUNDME ================= */
+.gofundme{
+  text-align:center;
+  background:#f5fbfd;
+  border-radius:20px;
+  padding:3rem 2rem;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  background:linear-gradient(to right,#f7f3de,#4ED7F1);
+  text-align:center;
+  padding:2.5rem 1rem;
+}
+.social-icons a{
+  margin:0 12px;
+  font-size:1.6rem;
+  color:#000;
+}
+
+/* ================= ANIMATION ================= */
+.fade{
+  animation:fadeUp 1.1s ease both;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .profile-ring{
+    margin-top:2rem;
+  }
+}
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#4ED7F1;
+    position:absolute;
+    top:65px;
+    right:20px;
+    padding:1rem;
+    border-radius:12px;
+  }
+  .nav-links.active{
+    display:flex;
+  }
+  .toggle-btn{
+    display:block;
+  }
+  .skill-row{
+    flex-direction:row;
+    gap:1rem;
+    padding:1.8rem;
+  }
+  .skill-icon{
+    font-size:2rem;
+  }
+  .skill-content h3{
+    font-size:1.3rem;
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem; /* افزایش ارتفاع از 1rem 2.5rem به 1.5rem 3rem */
+  background: linear-gradient(to right, #f7f3de, #4ED7F1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(78, 215, 241, 0.5); /* یک خط پایین اضافه برای جداسازی */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* سایه ملایم برای عمق */
+}
+.nav-links a {
+  font-size: 1.05rem; /* کمی بزرگتر */
+  padding: 0.6rem 0.8rem; /* فاصله داخلی بیشتر برای کلیک راحت */
+}
+.toggle-btn {
+  font-size: 1.8rem; /* کمی بزرگتر برای موبایل */
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo"><a href="#"><i class="fas fa-bell"></i></a></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="my skills.html"><i class="fas fa-user"></i> Skills</a></li>
+    <li><a href="certificates.html"><i class="fas fa-certificate"></i> Certificates</a></li>
+    <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+    <li><a href="project.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>  
+  <div class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade">
+  <div>
+    <h1>Hello, I’m <span id="typed-name"></span></h1>
+    <p>
+      Web Developer • Founder of Women Family Empower • Future Neurosurgeon
+    </p>
+    <div class="hero-buttons">
+      <a href="#about" class="btn primary">My Story</a>
+      <a href="#gofundme" class="btn secondary">Support My Education</a>
+    </div>
+  </div>
+  <div class="profile-ring">
+    <img src="pic/marjan.jpg" alt="Marjan Habibi">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about fade" id="about">
+  <h2>My Story</h2>
+  <p>
+    I am Marjan Habibi, a self-taught web developer and the founder of <strong>Women Family Empower</strong>,
+    an initiative focused on supporting women and families through education, awareness, and empowerment.
+    When girls’ schools were closed in Afghanistan, I refused to let silence shape my future.
+  </p>
+  <p>
+    Through online learning, discipline, and resilience, I developed technical skills in web development
+    and discovered the power of technology as a voice for change and self-expression.
+  </p>
+  <p>
+    My long-term goal is to become a neurosurgeon and a writer who tells the stories of Afghan women —
+    stories of pain, resistance, and hope — and proves that even under restriction,
+    dreams can grow and create real impact.
+  </p>
+</section>
+
+<!-- SKILLS / WHAT I DO -->
+<section class="section skills-modern fade" id="skills">
+  <h2>Skills & Impact</h2>
+  <div class="skills-list">
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-code"></i></div>
+      <div class="skill-content">
+        <h3>Frontend Development</h3>
+        <p>
+          Building clean, responsive, and accessible websites using HTML, CSS, and JavaScript with a focus on user experience.
+        </p>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-users"></i></div>
+      <div class="skill-content">
+        <h3>Social Impact & Leadership</h3>
+        <p>
+          Founder of <strong>Women Family Empower</strong>, supporting women and families through education, awareness, and community initiatives.
+        </p>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-pen-nib"></i></div>
+      <div class="skill-content">
+        <h3>Creative & Analytical Writing</h3>
+        <p>
+          Writing essays and articles reflecting identity, struggle, resilience, and the lived experiences of Afghan women.
+        </p>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-brain"></i></div>
+      <div class="skill-content">
+        <h3>Self-Learning & Growth</h3>
+        <p>
+          Continuous learner through online programs, self-study, and personal discipline despite educational barriers.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GOFUNDME -->
+<section class="section gofundme fade" id="gofundme">
+  <h2>Support My Education</h2>
+  <p style="margin:1.5rem auto;max-width:700px;">
+    Due to educational restrictions, continuing my studies is extremely challenging.
+    Your support helps me stay on my path toward education, medicine, and long-term impact.
+  </p>
+  <a href="PUT_YOUR_GOFUNDME_LINK_HERE" class="btn primary" target="_blank">
+    Support Me on GoFundMe
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="social-icons">
+    <a href="https://github.com/Marjan-Habibi" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:marjanhabibi875@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+  <p style="margin-top:1rem;">© 2025 Marjan Habibi</p>
+</footer>
+
+<script>
+/* NAVBAR TOGGLE */
+document.getElementById("toggle-btn").onclick=()=>{
+  document.getElementById("nav-links").classList.toggle("active");
+}
+
+/* TYPE EFFECT */
+const text="Marjan Habibi";
+let i=0;
+const target=document.getElementById("typed-name");
+function typeEffect(){
+  if(i<text.length){
+    target.innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeEffect,120);
+  }
+}
+window.onload=typeEffect;
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marjan Habibi | Portfolio</title>
+
+<link rel="icon" href="images/marjan habibi.jpg">
+
+<!-- Modern Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+/* ================= RESET & GLOBAL ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  font-family:'Inter',sans-serif;
+  background:#ffffff;
+  color:#1a1a1a;
+  line-height:1.7;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2.5rem;
+  background:linear-gradient(to right,#f7f3de,#4ED7F1);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.logo a{
+  font-size:1.4rem;
+  color:#ffffff;
+}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:2rem;
+}
+.nav-links a{
+  text-decoration:none;
+  color:#ffffff;
+  font-weight:600;
+}
+.toggle-btn{
+  display:none;
+  font-size:1.5rem;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:90vh;
+  max-width:1200px;
+  margin:auto;
+  padding:4rem 2rem;
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:3rem;
+  align-items:center;
+}
+.hero h1{
+  font-size:3.2rem;
+  font-weight:700;
+}
+.hero span{
+  color:#4ED7F1;
+}
+.hero p{
+  margin-top:1.2rem;
+  font-size:1.15rem;
+  color:#444;
+}
+.hero-buttons{
+  margin-top:2rem;
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:14px 28px;
+  border-radius:40px;
+  text-decoration:none;
+  font-weight:600;
+  transition:all 0.3s ease;
+}
+.primary{
+  background:#4ED7F1;
+  color:#fff;
+}
+.primary:hover{
+  background:#1fc5e2;
+  transform:translateY(-3px);
+}
+.secondary{
+  border:2px solid #4ED7F1;
+  color:#4ED7F1;
+}
+.secondary:hover{
+  background:#4ED7F1;
+  color:#fff;
+}
+
+/* ================= IMAGE ================= */
+.profile-ring img{
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #eaf8fb;
+}
+
+/* ================= SECTIONS ================= */
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:5rem 2rem;
+}
+.section h2{
+  font-size:2.4rem;
+  margin-bottom:2rem;
+  font-weight:700;
+  text-align:center;
+  color:#4ED7F1;
+}
+
+/* ================= ABOUT ================= */
+.about p{
+  margin-bottom:1.5rem;
+  font-size:1.05rem;
+  color:#333;
+}
+
+/* ================= MODERN SKILLS WITH ICONS ================= */
+.skills-modern{
+  margin-top:5rem;
+}
+.skills-list{
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+}
+.skill-row{
+  display:flex;
+  align-items:flex-start;
+  gap:1.5rem;
+  padding:2.2rem 2rem;
+  border-radius:20px;
+  background:linear-gradient(145deg,#ffffff,#f0f8ff);
+  box-shadow:0 15px 40px rgba(0,0,0,0.08);
+  transition:all 0.4s ease;
+}
+.skill-row:hover{
+  transform:translateY(-5px);
+  box-shadow:0 25px 60px rgba(78,215,241,0.25);
+}
+.skill-icon{
+  font-size:2.5rem;
+  color:#4ED7F1;
+  flex-shrink:0;
+  width:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.skill-content h3{
+  font-size:1.5rem;
+  margin-bottom:0.6rem;
+  color:#1a1a1a;
+}
+.skill-content p{
+  color:#444;
+  line-height:1.7;
+}
+
+/* ================= GOFUNDME ================= */
+.gofundme{
+  text-align:center;
+  background:#f5fbfd;
+  border-radius:20px;
+  padding:3rem 2rem;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  background:linear-gradient(to right,#f7f3de,#4ED7F1);
+  text-align:center;
+  padding:2.5rem 1rem;
+}
+.social-icons a{
+  margin:0 12px;
+  font-size:1.6rem;
+  color:#000;
+}
+
+/* ================= ANIMATION ================= */
+.fade{
+  animation:fadeUp 1.1s ease both;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .profile-ring{
+    margin-top:2rem;
+  }
+}
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+    flex-direction:column;
+    background:#4ED7F1;
+    position:absolute;
+    top:65px;
+    right:20px;
+    padding:1rem;
+    border-radius:12px;
+  }
+  .nav-links.active{
+    display:flex;
+  }
+  .toggle-btn{
+    display:block;
+  }
+  .skill-row{
+    flex-direction:row;
+    gap:1rem;
+    padding:1.8rem;
+  }
+  .skill-icon{
+    font-size:2rem;
+  }
+  .skill-content h3{
+    font-size:1.3rem;
+  }
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem; /* افزایش ارتفاع از 1rem 2.5rem به 1.5rem 3rem */
+  background: linear-gradient(to right, #f7f3de, #4ED7F1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid rgba(78, 215, 241, 0.5); /* یک خط پایین اضافه برای جداسازی */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* سایه ملایم برای عمق */
+}
+.nav-links a {
+  font-size: 1.05rem; /* کمی بزرگتر */
+  padding: 0.6rem 0.8rem; /* فاصله داخلی بیشتر برای کلیک راحت */
+}
+.toggle-btn {
+  font-size: 1.8rem; /* کمی بزرگتر برای موبایل */
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo"><a href="#"><i class="fas fa-bell"></i></a></div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+    <li><a href="my skills.html"><i class="fas fa-user"></i> Skills</a></li>
+    <li><a href="certificates.html"><i class="fas fa-certificate"></i> Certificates</a></li>
+    <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+    <li><a href="project.html"><i class="fas fa-folder-open"></i> Projects</a></li>
+    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+  </ul>  
+  <div class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></div>
+</nav>
+
+<!-- HERO -->
+<section class="hero fade">
+  <div>
+    <h1>Hello, I’m <span id="typed-name"></span></h1>
+    <p>
+      Web Developer • Founder of Women Family Empower • Future Neurosurgeon
+    </p>
+    <div class="hero-buttons">
+      <a href="#about" class="btn primary">My Story</a>
+      <a href="#gofundme" class="btn secondary">Support My Education</a>
+    </div>
+  </div>
+  <div class="profile-ring">
+    <img src="pic/marjan.jpg" alt="Marjan Habibi">
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about fade" id="about">
+  <h2>My Story</h2>
+  <p>
+    I am Marjan Habibi, a self-taught web developer and the founder of <strong>Women Family Empower</strong>,
+    an initiative focused on supporting women and families through education, awareness, and empowerment.
+    When girls’ schools were closed in Afghanistan, I refused to let silence shape my future.
+  </p>
+  <p>
+    Through online learning, discipline, and resilience, I developed technical skills in web development
+    and discovered the power of technology as a voice for change and self-expression.
+  </p>
+  <p>
+    My long-term goal is to become a neurosurgeon and a writer who tells the stories of Afghan women —
+    stories of pain, resistance, and hope — and proves that even under restriction,
+    dreams can grow and create real impact.
+  </p>
+</section>
+
+<!-- SKILLS / WHAT I DO -->
+<section class="section skills-modern fade" id="skills">
+  <h2>Skills & Impact</h2>
+  <div class="skills-list">
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-code"></i></div>
+      <div class="skill-content">
+        <h3>Frontend Development</h3>
+        <p>
+          Building clean, responsive, and accessible websites using HTML, CSS, and JavaScript with a focus on user experience.
+        </p>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-users"></i></div>
+      <div class="skill-content">
+        <h3>Social Impact & Leadership</h3>
+        <p>
+          Founder of <strong>Women Family Empower</strong>, supporting women and families through education, awareness, and community initiatives.
+        </p>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-pen-nib"></i></div>
+      <div class="skill-content">
+        <h3>Creative & Analytical Writing</h3>
+        <p>
+          Writing essays and articles reflecting identity, struggle, resilience, and the lived experiences of Afghan women.
+        </p>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-icon"><i class="fas fa-brain"></i></div>
+      <div class="skill-content">
+        <h3>Self-Learning & Growth</h3>
+        <p>
+          Continuous learner through online programs, self-study, and personal discipline despite educational barriers.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- GOFUNDME -->
+<section class="section gofundme fade" id="gofundme">
+  <h2>Support My Education</h2>
+  <p style="margin:1.5rem auto;max-width:700px;">
+    Due to educational restrictions, continuing my studies is extremely challenging.
+    Your support helps me stay on my path toward education, medicine, and long-term impact.
+  </p>
+  <a href="PUT_YOUR_GOFUNDME_LINK_HERE" class="btn primary" target="_blank">
+    Support Me on GoFundMe
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="social-icons">
+    <a href="https://github.com/Marjan-Habibi" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="mailto:marjanhabibi875@gmail.com"><i class="fas fa-envelope"></i></a>
+  </div>
+  <p style="margin-top:1rem;">© 2025 Marjan Habibi</p>
+</footer>
+
+<script>
+/* NAVBAR TOGGLE */
+document.getElementById("toggle-btn").onclick=()=>{
+  document.getElementById("nav-links").classList.toggle("active");
+}
+
+/* TYPE EFFECT */
+const text="Marjan Habibi";
+let i=0;
+const target=document.getElementById("typed-name");
+function typeEffect(){
+  if(i<text.length){
+    target.innerHTML+=text.charAt(i);
+    i++;
+    setTimeout(typeEffect,120);
+  }
+}
+window.onload=typeEffect;
+</script>
 
 </body>
 </html>
