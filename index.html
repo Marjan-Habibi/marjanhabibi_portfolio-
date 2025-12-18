@@ -272,6 +272,53 @@ body{
   font-size: 1.8rem; /* کمی بزرگتر برای موبایل */
 }
 
+/* ========= FOOTER ICON STYLE (NEW) ========= */
+.site-footer{
+  background: #1fc5e2;
+  padding:3.5rem 1.5rem;
+  text-align:center;
+}
+
+.footer-text{
+  color:#020202;
+  margin-bottom:2rem;
+  font-size:1.05rem;
+}
+
+.footer-icons{
+  display:flex;
+  justify-content:center;
+  gap:1.4rem;
+  flex-wrap:wrap;
+  margin-bottom:2.2rem;
+}
+
+.footer-icons a{
+  width:48px;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:14px;
+  background:rgba(84, 190, 209, 0.05);
+  color:#e0e7ff;
+  font-size:1.25rem;
+  transition:all 0.35s ease;
+  backdrop-filter:blur(6px);
+}
+
+.footer-icons a:hover{
+  background:#ffffff;
+  color:#020617;
+  transform:translateY(-5px) scale(1.05);
+  box-shadow:0 12px 30px rgba(78,215,241,0.45);
+}
+
+.footer-copy{
+  font-size:0.85rem;
+  color:#000000;
+}
+
 </style>
 </head>
 
@@ -300,7 +347,7 @@ body{
     </p>
     <div class="hero-buttons">
       <a href="#about" class="btn primary">My Story</a>
-      <a href="#gofundme" class="btn secondary">Support My Education</a>
+      <a href="https://gofund.me/42d084390" class="btn secondary">Support My Education</a>
     </div>
   </div>
   <div class="profile-ring">
@@ -382,21 +429,51 @@ body{
     Due to educational restrictions, continuing my studies is extremely challenging.
     Your support helps me stay on my path toward education, medicine, and long-term impact.
   </p>
-  <a href="PUT_YOUR_GOFUNDME_LINK_HERE" class="btn primary" target="_blank">
+  <a href="https://gofund.me/42d084390" class="btn primary" target="_blank">
     Support Me on GoFundMe
   </a>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="social-icons">
-    <a href="https://github.com/Marjan-Habibi" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:marjanhabibi875@gmail.com"><i class="fas fa-envelope"></i></a>
-  </div>
-  <p style="margin-top:1rem;">© 2025 Marjan Habibi</p>
-</footer>
-
+<footer class="site-footer">
+    <div class="footer-content">
+  
+      <p class="footer-text">
+        Building impact through technology, education & resilience.
+      </p>
+  
+      <div class="footer-icons">
+        <a href="https://github.com/Marjan-Habibi" target="_blank" title="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+  
+        <a href="https://www.linkedin.com/in/marjan-habibi-b84b94395?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" title="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+  
+        <a href="https://www.instagram.com/marjan_habibi90?igsh=MWVkcnhzMnYyNWM4bQ%3D%3D&utm_source=qr" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+  
+        <a href="https://x.com/marjanhabibi90?s=21" target="_blank" title="X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+  
+        <a href="https://gofund.me/42d084390" target="_blank" title="GoFundMe">
+          <i class="fas fa-hand-holding-heart"></i>
+        </a>
+  
+        <a href="https://t.me/marjanhabibi0" target="_blank" title="Telegram">
+          <i class="fab fa-telegram-plane"></i>
+        </a>
+      </div>
+  
+      <p class="footer-copy">
+        © 2025 Marjan Habibi · All Rights Reserved
+      </p>
+  
+    </div>
+  </footer>
+  
 <script>
 /* NAVBAR TOGGLE */
 document.getElementById("toggle-btn").onclick=()=>{
@@ -419,4 +496,3 @@ window.onload=typeEffect;
 
 </body>
 </html>
-
