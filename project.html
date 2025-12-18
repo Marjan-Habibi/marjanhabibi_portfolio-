@@ -10,7 +10,7 @@
 
   <style>
     body{
-      font-family: 'Montserrat', sans-serif;
+      font-family:'Montserrat',sans-serif;
       background:#fff;
       margin:0;
       color:#000;
@@ -49,6 +49,38 @@
       color:#000;
     }
 
+    .menu-toggle{
+      display:none;
+      font-size:1.6rem;
+      color:#fff;
+      cursor:pointer;
+    }
+
+    /* ===== MOBILE NAVBAR ===== */
+    @media(max-width:768px){
+      .menu-toggle{
+        display:block;
+      }
+
+      .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        width:100%;
+        background:linear-gradient(to bottom,#f7f3de,#4ED7F1);
+        flex-direction:column;
+        align-items:center;
+        padding:1.5rem 0;
+        gap:1.5rem;
+        display:none;
+      }
+
+      .nav-links.active{
+        display:flex;
+      }
+    }
+
+    /* ===== PROJECTS ===== */
     h2{
       text-align:center;
       margin:3rem 0 2rem;
@@ -56,7 +88,6 @@
       font-size:32px;
     }
 
-    /* ===== PROJECTS ===== */
     .projects-container{
       display:flex;
       flex-wrap:wrap;
@@ -69,7 +100,7 @@
       width:500px;
       border-radius:20px;
       overflow:hidden;
-      background:rgba(255,255,255,0.05);
+      background:#fff;
       box-shadow:0 10px 25px rgba(0,0,0,0.2);
       transition:0.3s;
     }
@@ -115,6 +146,12 @@
       background:#000;
     }
 
+    @media(max-width:600px){
+      .project-card{
+        width:90%;
+      }
+    }
+
     /* ===== FOOTER ===== */
     .footer{
       background:linear-gradient(to right,#f7f3de,#4ED7F1,#f7f3de);
@@ -141,34 +178,35 @@
     .footer-bottom{
       font-size:0.9rem;
     }
-
-    @media(max-width:600px){
-      .project-card{width:90%;}
-    }
   </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ===== NAVBAR ===== -->
 <nav class="navbar">
-  <div class="logo"><a href="#"><i class="fas fa-bell"></i></a></div>
+  <div class="logo">
+    <a href="index.html"><i class="fas fa-bell"></i></a>
+  </div>
+
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-    <li><a href="my skills.html"><i class="fas fa-user"></i> Skills</a></li>
-    <li><a href="certificates.html"><i class="fas fa-certificate"></i> Certificates</a></li>
-    <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
-    <li><a href="project.html"><i class="fas fa-folder-open"></i> Projects</a></li>
-    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-  </ul>  
-  <div class="toggle-btn" id="toggle-btn"><i class="fas fa-bars"></i></div>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="my skills.html">Skills</a></li>
+    <li><a href="certificates.html">Certificate</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="project.html">Project</a></li>
+  </ul>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
 </nav>
 
 <h2>My Projects</h2>
 
 <div class="projects-container">
 
-  <!-- Afghan Aria -->
   <div class="project-card">
     <img src="images/afg aria.jpg" class="project-image">
     <div class="project-content">
@@ -181,16 +219,12 @@
     </div>
   </div>
 
- 
-
-  <!-- Pocket Classroom -->
   <div class="project-card">
     <img src="pic/p-c.jpg" class="project-image">
     <div class="project-content">
       <div class="project-title">Pocket Classroom</div>
       <div class="project-description">
-        A digital classroom platform to manage lessons, educational content, and student learning
-        in a simple and organized environment.
+        A digital classroom platform to manage lessons and learning materials.
       </div>
       <a href="https://github.com/Marjan-Habibi/Pocket_Classroom" class="project-btn" target="_blank">
         View Project →
@@ -198,15 +232,12 @@
     </div>
   </div>
 
-
-  <!-- Foodi Hub -->
   <div class="project-card">
     <img src="pic/food1.jpg" class="project-image">
     <div class="project-content">
       <div class="project-title">Foodi Hub</div>
       <div class="project-description">
-        A responsive food ordering website created using HTML, CSS, and Bootstrap to practice
-        layout and UI design.
+        A responsive food ordering website built with HTML, CSS, and Bootstrap.
       </div>
       <a href="https://github.com/Marjan-Habibi/foodi_hub_" class="project-btn" target="_blank">
         View Project →
@@ -214,14 +245,12 @@
     </div>
   </div>
 
-  <!-- Guess Game -->
   <div class="project-card">
     <img src="pic/guess.jpg" class="project-image">
     <div class="project-content">
       <div class="project-title">Guess Game</div>
       <div class="project-description">
-        A fun JavaScript guessing game that improves logical thinking and interaction
-        through simple gameplay.
+        A fun JavaScript guessing game to practice logic and interaction.
       </div>
       <a href="https://github.com/Marjan-Habibi/-Guess_Game" class="project-btn" target="_blank">
         View Project →
@@ -229,15 +258,12 @@
     </div>
   </div>
 
-
-  <!-- Whack a Mole -->
   <div class="project-card">
     <img src="images/whack-a-mole.jpg" class="project-image">
     <div class="project-content">
-      <div class="project-title">Whack a Mole Game</div>
+      <div class="project-title">Whack a Mole</div>
       <div class="project-description">
-        An interactive JavaScript game that improves reaction speed through dynamic elements
-        and real-time interaction.
+        An interactive JavaScript game focused on speed and reaction.
       </div>
       <a href="https://github.com/Marjan-Habibi/Whack-a-Mole-With-" class="project-btn" target="_blank">
         View Project →
@@ -245,14 +271,12 @@
     </div>
   </div>
 
-  <!-- Trash Catch Game -->
   <div class="project-card">
     <img src="images/trash-catch.jpg" class="project-image">
     <div class="project-content">
       <div class="project-title">Trash Catch Game</div>
       <div class="project-description">
-        A JavaScript game focused on catching falling objects, teaching coordination
-        and DOM manipulation skills.
+        A JavaScript game teaching coordination and DOM manipulation.
       </div>
       <a href="https://github.com/Marjan-Habibi/Trash_Catch_Game" class="project-btn" target="_blank">
         View Project →
@@ -260,14 +284,12 @@
     </div>
   </div>
 
-  <!-- Afghan Proverbs -->
   <div class="project-card">
     <img src="images/afg 1.jpg" class="project-image">
     <div class="project-content">
       <div class="project-title">Afghan Proverbs</div>
       <div class="project-description">
-        A simple and elegant site presenting traditional Afghan proverbs with meaning
-        and cultural insights, built with HTML, CSS, and JavaScript.
+        A cultural site presenting Afghan proverbs with meaning.
       </div>
       <a href="https://github.com/Marjan-Habibi/afghan_proverbs" class="project-btn" target="_blank">
         View Project →
@@ -275,14 +297,12 @@
     </div>
   </div>
 
-  <!-- HTD Ehsan Ehrari -->
   <div class="project-card">
     <img src="images/htd-ehsan.jpg" class="project-image">
     <div class="project-content">
       <div class="project-title">HTD Ehsan Ehrari</div>
       <div class="project-description">
-        A web project focused on showcasing technical design and layout practice
-        created by collaborating with UI/UX principles.
+        A layout and UI practice project based on design principles.
       </div>
       <a href="https://github.com/Marjan-Habibi/HTD_Ehsan_Ehrari" class="project-btn" target="_blank">
         View Project →
@@ -290,29 +310,25 @@
     </div>
   </div>
 
-  <!-- Afghanistan Country -->
   <div class="project-card">
     <img src="images/afghanistan.jpg" class="project-image">
     <div class="project-content">
       <div class="project-title">Afghanistan Country</div>
       <div class="project-description">
-        A cultural and informative site about Afghanistan, showcasing geography,
-        history, traditions, and people.
+        An informative website about Afghanistan’s culture and geography.
       </div>
       <a href="https://marjan-habibi.github.io/marjanhabibi_afghanistan_country/" class="project-btn" target="_blank">
-        View Project →  
+        View Project →
       </a>
     </div>
   </div>
 
-   <!-- Restaurant -->
-   <div class="project-card">
+  <div class="project-card">
     <img src="images/foods-marjan.jpg" class="project-image">
     <div class="project-content">
       <div class="project-title">Restaurant Marjan</div>
       <div class="project-description">
-        A modern restaurant website presenting menu, atmosphere, and services with a clean
-        and attractive design.
+        A modern restaurant website with a clean and attractive design.
       </div>
       <a href="https://marjan-habibi.github.io/restaurant_marjan_habibi/" class="project-btn" target="_blank">
         View Project →
@@ -332,6 +348,14 @@
   <div class="footer-bottom">© 2025 Marjan Habibi. All rights reserved.</div>
 </footer>
 
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>
-
